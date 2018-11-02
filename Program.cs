@@ -12,13 +12,13 @@ using System.Threading;
 using MongoDB.Driver;
 using MongoDB.Bson;
 
-// to do: iş parçacığı ve çıkmak için q düğmesine basmak
+// ToDo: İşlemleri Durdurmak İçi q Düğmesini Ayarlanması
 
 namespace McScraper
 {
     class Program
     {
-        // Kolaylık sağlamak için dizelerin bir listesini yazdırın
+        // Kolaylık sağlamak için dizelerin bir listesini al
         static void stampaLista(List<string> lista)
         {
             for (int i = 0; i < lista.Count(); i++)
@@ -31,7 +31,7 @@ namespace McScraper
         {
             string banner =
 @" ############################################################################ 
- #                      Mc Scraper v1 - Pastebin Scraper                    # 
+ #                      Mc Scraper v1 - PasteBin Scraper                    # 
  #                         Developer Memba Co. 2018                         # 
  #                           Tüm Hakları Saklırdır.                         # 
  ############################################################################ 
@@ -40,7 +40,7 @@ namespace McScraper
 
             var mongoDB = new Database();
             var McScraper = new Scraper();
-            // Kullanmak için düzenli ifadeyi seçin
+            // Kullanmak için düzenli (REGEX) ifadeyi seçin
             string regex = @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*";
             Console.SetWindowSize( Math.Min(78, Console.LargestWindowWidth), Math.Min(30, Console.LargestWindowHeight));
             Console.BackgroundColor = ConsoleColor.DarkRed;
